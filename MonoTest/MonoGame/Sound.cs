@@ -22,6 +22,13 @@ namespace MonoWrap
             _song = GameManager._game.Content.Load<Song>(リソース名);
         }
 
+        public void LoadFile(string ファイル名)
+        {
+            //バグるからリソースの方を使う
+            var uri = new Uri(ファイル名, UriKind.Relative);
+            _song = Song.FromUri(ファイル名, uri);
+        }
+
         //バックグラウンドでループ再生
         public void Play()
         {
@@ -43,6 +50,11 @@ namespace MonoWrap
         public void Load(string リソース名)
         {
             _se = GameManager._game.Content.Load<SoundEffect>(リソース名);
+        }
+
+        public void LoadFile(string ファイル名)
+        {
+            _se = SoundEffect.FromFile(ファイル名);
         }
 
         public void Play()

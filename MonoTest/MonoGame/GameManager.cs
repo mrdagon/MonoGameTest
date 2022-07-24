@@ -31,6 +31,7 @@ namespace MonoWrap
             game.Content.RootDirectory = "Content";
             game.IsMouseVisible = true;
 
+            _graphDevice.ApplyChanges();
         }
 
         static public void InitSprite(GraphicsDevice graphicsDevice)
@@ -42,6 +43,7 @@ namespace MonoWrap
         {
             _graphDevice.PreferredBackBufferWidth = 幅;
             _graphDevice.PreferredBackBufferHeight = 高さ;
+            _graphDevice.ApplyChanges();
         }
 
         static public void SetTitle(string タイトル文字列)
@@ -106,7 +108,7 @@ namespace MonoWrap
                 return;
             }
 
-            Viewport vp = new Viewport(描画領域.x, 描画領域.y, 描画領域.w, 描画領域.h);
+            Viewport vp = new Viewport(描画領域.x * _zoomRate, 描画領域.y * _zoomRate, 描画領域.w * _zoomRate, 描画領域.h * _zoomRate);
             _game.GraphicsDevice.Viewport = vp;
 
         }

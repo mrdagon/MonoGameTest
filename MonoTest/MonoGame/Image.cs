@@ -32,11 +32,45 @@ namespace MonoWrap
             return imageS;
         }
 
+        static public Image[] LoadDivGraphFile(string ファイル名, int 横分割, int 縦分割, int 総数)
+        {
+            Image[] imageS = new Image[総数];
+            Texture2D texture2D;
+
+            using (FileStream stream = new FileStream(ファイル名, FileMode.Open))
+            {
+                texture2D = Texture2D.FromStream(GameManager._graphDevice.GraphicsDevice, stream);
+            }
+
+            int w = texture2D.Width / 横分割;
+            int h = texture2D.Height / 縦分割;
+
+            for (int i = 0; i < 総数; i++)
+            {
+                imageS[i] = new Image();
+                imageS[i]._texture = texture2D;
+                imageS[i]._使用範囲 = new Rectangle((i % 横分割) * w, (i / 縦分割) * h, w, h);
+            }
+
+            return imageS;
+        }
+
         public void Load(string リソース名)
         {
             _texture = GameManager._game.Content.Load<Texture2D>(リソース名);
             _使用範囲 = new Rectangle(0, 0, _texture.Width, _texture.Height);
         }
+
+        public void LoadFile(string ファイル名)
+        {
+            using (FileStream stream = new FileStream(ファイル名, FileMode.Open))
+            {
+                _texture = Texture2D.FromStream(GameManager._graphDevice.GraphicsDevice, stream);
+            }
+
+            _使用範囲 = new Rectangle(0, 0, _texture.Width, _texture.Height);
+        }
+
 
         public void Draw( Point 座標 , bool is反転 = false)
         {

@@ -48,6 +48,16 @@ namespace MonoWrap
         static public int moveY = 0;
         static public int whell = 0;
 
+        static public void Init()
+        {
+            int key_count = Enum.GetNames(typeof(Keys)).Length;
+
+            for (int i = 0; i < key_count; i++)
+            {
+                keys[i] = new Key();
+            }
+        }
+
         static public void Update()
         {
             int key_count = Enum.GetNames(typeof(Keys)).Length;
@@ -55,10 +65,18 @@ namespace MonoWrap
             //マウス入力の更新
             int mx = Mouse.GetState().X;
             int my = Mouse.GetState().Y;
+
+            if(GameManager._zoomRate != 1 )
+            {
+                mx = mx / GameManager._zoomRate;
+                my = my / GameManager._zoomRate;
+            }
+
             moveX = mx - mouse.x;
             moveY = my - mouse.y;
             mouse.x = mx;
             mouse.y = my;
+
             whell = Mouse.GetState().ScrollWheelValue;
 
             mouseLeft.Update(Mouse.GetState().LeftButton == ButtonState.Pressed);

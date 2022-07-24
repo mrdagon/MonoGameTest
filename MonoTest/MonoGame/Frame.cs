@@ -15,11 +15,25 @@ namespace MonoWrap
         private Image[] _枠画像;
         private Image[] _ゲージ画像;
 
-        public void Load(string 枠画像ファイル名 , string 内部画像ファイル名 = "")
+        public void Load(string 枠画像リソース名 , string 内部画像リソース名 = "")
         {
-            _枠画像 = Image.LoadDivGraph(枠画像ファイル名,3,3,9);
+            _枠画像 = Image.LoadDivGraph(枠画像リソース名,3,3,9);
 
-            if(内部画像ファイル名 != "")
+            if(内部画像リソース名 != "")
+            {
+                _ゲージ画像 = Image.LoadDivGraph(内部画像リソース名, 3, 3, 9);
+            }
+            else
+            {
+                _ゲージ画像 = _枠画像;
+            }
+        }
+
+        public void LoadFile(string 枠画像ファイル名, string 内部画像ファイル名 = "")
+        {
+            _枠画像 = Image.LoadDivGraphFile(枠画像ファイル名, 3, 3, 9);
+
+            if (内部画像ファイル名 != "")
             {
                 _ゲージ画像 = Image.LoadDivGraph(内部画像ファイル名, 3, 3, 9);
             }

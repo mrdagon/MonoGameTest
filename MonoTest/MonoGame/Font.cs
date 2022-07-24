@@ -95,11 +95,14 @@ namespace MonoWrap
 
         public void DrawRotate(int 座標X, int 座標Y, double 拡大率, double 角度, Color 描画色, string 描画する文字列)
         {
+            var ms = font.MeasureString(描画する文字列);
+
             if (GameManager._zoomRate != 1)
             {
                 座標X *= GameManager._zoomRate;
                 座標Y *= GameManager._zoomRate;
                 拡大率 *= GameManager._zoomRate;
+                ms *= GameManager._zoomRate;
             }
 
             Color c = new Color(
@@ -109,7 +112,6 @@ namespace MonoWrap
                 GameManager._drawingColor.A * 描画色.A / 255
                 );
 
-            var ms = font.MeasureString(描画する文字列);
 
             GameManager._spriteBatch.DrawString(font, 描画する文字列, new Vector2(座標X, 座標Y), c, (float)角度, new Vector2(ms.X / 2, ms.Y / 2), (float)拡大率, SpriteEffects.None, 0);
         }
