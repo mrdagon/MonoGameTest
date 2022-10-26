@@ -34,7 +34,6 @@ C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.Assemb
 C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.csproj.CoreCompileInputs.cache
 C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.dll
 C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.pdb
-C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\ball.xnb
 C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\MonoTest.exe
 C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\MonoTest.deps.json
 C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\MonoTest.runtimeconfig.json
@@ -56,6 +55,5 @@ C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\runtimes\win-x8
 C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
 C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.csproj.CopyComplete
 C:\Users\ganta\Desktop\MonoTest\MonoTest\obj\Debug\netcoreapp3.1\MonoTest.genruntimeconfig.cache
-C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\alarm00r.ogg
-C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\alarm00r.xnb
-C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\alarm00_r.xnb
+C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\BGM117-110921-yuuyakenagisa.ogg
+C:\Users\ganta\Desktop\MonoTest\MonoTest\bin\Debug\netcoreapp3.1\Content\BGM117-110921-yuuyakenagisa.xnb

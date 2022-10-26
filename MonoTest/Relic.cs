@@ -27,7 +27,7 @@ namespace MonoTest
 
         }
 
-        static void Set(string 名前,string 説明,double 抽選率,RelicType レリック種 , RecipeType 対応レシピ = RecipeType.COUNT)
+        static void Set(string 名前,string 説明,double 抽選率,RelicType レリック種 , RecipeType 対応レシピ = RecipeType.Count)
         {
 
         }

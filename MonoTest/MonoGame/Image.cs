@@ -74,7 +74,6 @@ namespace MonoWrap
 
         public void Draw( Point 座標 , bool is反転 = false)
         {
-            //DrawRotate(座標, 1, 0, is反転);
             Draw(座標.x,座標.y , is反転);
         }
 

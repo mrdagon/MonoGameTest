@@ -9,7 +9,10 @@ namespace MonoWrap
         {
             //エントリーポイント
             using (var game = new MainGame())
+            {
                 game.Run();
+                game.Close();
+            }
         }
     }
 }

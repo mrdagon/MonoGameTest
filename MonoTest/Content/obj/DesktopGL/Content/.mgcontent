@@ -4,13 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/alarm00_r.wav</File>
-    <File>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/alarm00r.mp3</File>
-    <File>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/ball.png</File>
+    <File>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/BGM117-110921-yuuyakenagisa.mp3</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

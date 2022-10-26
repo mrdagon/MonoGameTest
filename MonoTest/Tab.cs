@@ -7,22 +7,25 @@ namespace MonoTest
 {
     internal class Tab
     {
-        static Tab This;
+        static int ID = 0;
+        static Rect メイン = new Rect();
+        static Rect 製造タブ = new Rect();
+        static Rect 金レシピタブ = new Rect();
+        static Rect ステータスタブ = new Rect();
+        static Rect コンフィグタブ = new Rect();
+        static Rect 実績タブ = new Rect();
 
-        int ID;
-        Rect メイン;
-        Rect 製造タブ;
-        Rect 金レシピタブ;
-        Rect ステータスタブ;
-        Rect コンフィグタブ;
-        Rect 実績タブ;
+        public static void Draw()
+        {
+            InitUI();
+        }
 
-        static void InitUI()
+        public static void InitUI()
         {
 
         }
 
-        static void Input()
+        public static void Input()
         {
 
         }

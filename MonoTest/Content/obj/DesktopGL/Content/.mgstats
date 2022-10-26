@@ -1,4 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/alarm00_r.wav","C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/alarm00_r.xnb","SoundEffectProcessor","SoundEffectContent",67814,67862,1.1692663
-"C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/alarm00r.mp3","C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/alarm00r.xnb","SongProcessor","SongContent",61902,126,1.3784153
-"C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/ball.png","C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.3365416
+"C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/BGM117-110921-yuuyakenagisa.mp3","C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/BGM117-110921-yuuyakenagisa.xnb","SongProcessor","SongContent",1403254,145,2.3311725
