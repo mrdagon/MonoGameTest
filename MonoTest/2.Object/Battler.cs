@@ -5,5 +5,10 @@ using MonoWrap;
 
 namespace POY
 {
+    //味方と敵の戦闘用
+    public class Battler
+    {
+
+    }
 
 }

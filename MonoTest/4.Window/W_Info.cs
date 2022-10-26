@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //マウスオーバーヘルプウィンドウ
+    public class W_Info
+    {
 
+    }
 }

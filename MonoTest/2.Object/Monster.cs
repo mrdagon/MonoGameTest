@@ -5,5 +5,10 @@ using MonoWrap;
 
 namespace POY
 {
+    //敵モンスター
+    public class Monster
+    {
+
+    }
 
 }

@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //アイテムウィンドウ
+    public class W_Item
+    {
 
+    }
 }

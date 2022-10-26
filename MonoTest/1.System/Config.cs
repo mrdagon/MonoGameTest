@@ -5,7 +5,8 @@ using MonoWrap;
 
 namespace POY
 {
-    internal class Config
+    //各種設定値
+    public class Config
     {
 
     }

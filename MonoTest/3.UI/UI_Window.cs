@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //ウィンドウベースクラス
+    public class UI_Window
+    {
 
+    }
 }

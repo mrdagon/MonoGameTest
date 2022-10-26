@@ -5,5 +5,13 @@ using MonoWrap;
 
 namespace POY
 {
-    
+    //各種列挙型
+
+
+    enum ETest
+    {
+
+    }
+
+
 }

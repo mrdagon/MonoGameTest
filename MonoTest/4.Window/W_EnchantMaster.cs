@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //エンチャントマスタリーウィンドウ
+    public class EnchantMaster
+    {
 
+    }
 }

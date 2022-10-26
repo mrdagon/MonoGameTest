@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //設定変更ウィンドウ
+    public class W_Config
+    {
 
+    }
 }

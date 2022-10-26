@@ -5,7 +5,8 @@ using MonoWrap;
 
 namespace POY
 {
-    internal class SaveData
+    //セーブ＆ロード処理
+    public class SaveData
     {
 
     }

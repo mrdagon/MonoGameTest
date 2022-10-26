@@ -5,5 +5,8 @@ using MonoWrap;
 
 namespace POY
 {
+    public class MainScene
+    {
 
+    }
 }

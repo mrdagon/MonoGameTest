@@ -5,5 +5,10 @@ using MonoWrap;
 
 namespace POY
 {
+    //ログメッセージ
+    public class Log
+    {
+
+    }
 
 }

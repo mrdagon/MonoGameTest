@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //各種クエスト
+    public class Quest
+    {
 
+    }
 }

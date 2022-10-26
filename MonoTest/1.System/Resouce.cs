@@ -4,9 +4,10 @@ using System.Text;
 using MonoWrap;
 
 
-namespace MonoTest
+namespace POY
 {
-    internal class RImage
+    //Asetに統合
+    public class RImage
     {
         public static EnumArray<Image, RecipeType> 製造アイコン = new EnumArray<Image, RecipeType>((int)RecipeType.Count);
         public static EnumArray<Image, RelicType> 財宝アイコン = new EnumArray<Image, RelicType>((int)RelicType.Count);

@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //装備品
+    public class Item
+    {
 
+    }
 }

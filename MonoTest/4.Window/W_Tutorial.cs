@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //チュートリアルウィンドウ
+    public class W_Tutorial
+    {
 
+    }
 }

@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //素材ウィンドウ
+    public class W_Material
+    {
 
+    }
 }

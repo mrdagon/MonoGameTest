@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //実績ウィンドウ
+    public class W_Archive
+    {
 
+    }
 }

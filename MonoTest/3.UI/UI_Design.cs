@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //UIウィンドウ描画関数
+    public class Design
+    {
 
+    }
 }

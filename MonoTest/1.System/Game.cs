@@ -3,40 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace MonoTest
+namespace POY
 {
-    //転生ボタンなど
-    internal class Config
+    //各種グローバル変数
+    public class Game
     {
-        static Config This = new Config();
 
-        int 表示倍率 = 2;
-
-        int BGM音量 = 5;
-        int SE音量 = 5;
-
-        //UI座標パラメータ
-        Rect BGM音量プラス;
-        Rect SE音量プラス;
-
-        static void Init()
-        {
-
-        }
-
-        static void InitUI()
-        {
-
-        }
-
-        static void DrawTab()
-        {
-
-        }
-
-        static void Input()
-        {
-
-        }
     }
 }

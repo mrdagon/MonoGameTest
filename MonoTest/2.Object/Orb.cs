@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //クラフトオーブ、強化オーブ
+    public class Orb
+    {
 
+    }
 }

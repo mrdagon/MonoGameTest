@@ -5,8 +5,8 @@ using MonoWrap;
 
 namespace POY
 {
-    //商品のクラフトレシピ
-    public class Recipe
+    //アイテムエンチャントウィンドウ
+    public class EnchantItem
     {
 
     }

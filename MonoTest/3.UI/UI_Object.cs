@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //UIオブジェクトのベースクラス
+    public class UI_Object
+    {
 
+    }
 }

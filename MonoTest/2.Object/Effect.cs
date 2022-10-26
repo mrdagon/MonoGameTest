@@ -5,5 +5,10 @@ using MonoWrap;
 
 namespace POY
 {
+    //戦闘等のエフェクト
+    public class Effect
+    {
+
+    }
 
 }

@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace MonoTest
+namespace POY
 {
-
+    //各種テキスト
+    public class Text
+    {
+        
+    }
 }

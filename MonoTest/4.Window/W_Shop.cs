@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //鍛冶屋ウィンドウ
+    public class W_Shop
+    {
 
+    }
 }

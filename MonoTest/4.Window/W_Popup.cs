@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //はい／いいえウィンドウ
+    public class W_Popup
+    {
 
+    }
 }

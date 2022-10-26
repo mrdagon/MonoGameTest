@@ -5,5 +5,10 @@ using MonoWrap;
 
 namespace POY
 {
+    //探索者
+    public class Explorer
+    {
+
+    }
 
 }

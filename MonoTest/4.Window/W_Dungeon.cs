@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //ダンジョンマスタリーウィンドウ
+    public class W_Dungeon
+    {
 
+    }
 }

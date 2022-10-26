@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //メンバー強化ウィンドウ
+    public class EnchantMember
+    {
 
+    }
 }

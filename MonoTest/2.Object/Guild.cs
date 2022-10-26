@@ -5,5 +5,9 @@ using MonoWrap;
 
 namespace POY
 {
+    //ギルド
+    public class Guild
+    {
 
+    }
 }
