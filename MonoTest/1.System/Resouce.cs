@@ -7,6 +7,7 @@ using MonoWrap;
 namespace POY
 {
     //Asetに統合
+    /*
     public class RImage
     {
         public static EnumArray<Image, RecipeType> 製造アイコン = new EnumArray<Image, RecipeType>((int)RecipeType.Count);
@@ -148,4 +149,5 @@ namespace POY
         }
 
     }
+    */
 }

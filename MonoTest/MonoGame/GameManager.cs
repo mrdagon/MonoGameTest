@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoWrap
 {
-    internal class GameManager
+    public class GameManager
     {
         static public Game _game;
         static public GraphicsDeviceManager _graphDevice;

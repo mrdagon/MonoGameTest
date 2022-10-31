@@ -10,7 +10,7 @@ using System.IO;
 
 namespace MonoWrap
 {
-    internal class Image
+    public class Image
     {
         private Texture2D _texture;
         private Rectangle _使用範囲;

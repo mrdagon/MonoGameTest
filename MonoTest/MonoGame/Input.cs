@@ -9,7 +9,7 @@ using System.IO;
 
 namespace MonoWrap
 {
-    internal class Key
+    public class Key
     {
         public bool on = false;
         public bool off = false;
@@ -35,7 +35,7 @@ namespace MonoWrap
         }
     }
 
-    internal class Input
+    public class Input
     {
         static public Key[] keys = new Key[Enum.GetNames(typeof(Keys)).Length];
 

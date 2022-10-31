@@ -12,7 +12,7 @@ using System.IO;
 namespace MonoWrap
 {
     //MP3ファイルをループ再生する
-    internal class Music
+    public class Music
     {
         private Song _song;
 
@@ -43,7 +43,7 @@ namespace MonoWrap
     }
 
     //Wavファイルを一度再生する
-    internal class Sound
+    public class Sound
     {
         private SoundEffect _se;
 

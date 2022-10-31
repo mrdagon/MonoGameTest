@@ -10,7 +10,7 @@ using System.IO;
 namespace MonoWrap
 {
     //枠と割合ゲージ用
-    internal class Frame
+    public class Frame
     {
         private Image[] _枠画像;
         private Image[] _ゲージ画像;

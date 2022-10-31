@@ -2,7 +2,8 @@ using System;
 
 namespace MonoWrap
 {
-    internal class EnumArray<T,TEnum> where T : new()
+    //特定の列挙型でのみアクセス可能なコンテナ
+    public class EnumArray<T,TEnum> where T : new()
     {
         T[] array;
     
@@ -23,11 +24,5 @@ namespace MonoWrap
             get { return this.array[(int)(object)tenum]; }
 
         }
-
-
-
     }
-
-
-
 }

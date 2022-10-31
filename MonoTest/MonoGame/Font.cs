@@ -9,7 +9,7 @@ using System.IO;
 
 namespace MonoWrap
 {
-    internal class Font
+    public class Font
     {
         public enum FontPosition
         {
