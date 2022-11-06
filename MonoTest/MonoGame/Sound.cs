@@ -9,65 +9,64 @@ using Microsoft.Xna.Framework.Audio;
 using SpriteFontPlus;
 using System.IO;
 
-namespace MonoWrap
+namespace MonoWrap;
+
+//MP3ファイルをループ再生する
+public class Music
 {
-    //MP3ファイルをループ再生する
-    public class Music
+    private Song _song;
+
+    //BGMとSEの読込み
+    public void Load(string リソース名)
     {
-        private Song _song;
-
-        //BGMとSEの読込み
-        public void Load(string リソース名)
-        {
-            _song = GameManager._game.Content.Load<Song>(リソース名);
-        }
-
-        public void LoadFile(string ファイル名)
-        {
-            //バグるからリソースの方を使う
-            var uri = new Uri(ファイル名, UriKind.Relative);
-            _song = Song.FromUri(ファイル名, uri);
-        }
-
-        //バックグラウンドでループ再生
-        public void Play()
-        {
-            MediaPlayer.Play(_song);
-            MediaPlayer.IsRepeating = true;
-        }
-
-        static public void SetMasterVolume(double 音量 = 1.0)
-        {
-            MediaPlayer.Volume = (float)音量;
-        }
+        _song = GameManager._game.Content.Load<Song>(リソース名);
     }
 
-    //Wavファイルを一度再生する
-    public class Sound
+    public void LoadFile(string ファイル名)
     {
-        private SoundEffect _se;
+        //バグるからリソースの方を使う
+        var uri = new Uri(ファイル名, UriKind.Relative);
+        _song = Song.FromUri(ファイル名, uri);
+    }
 
-        public void Load(string リソース名)
-        {
-            _se = GameManager._game.Content.Load<SoundEffect>(リソース名);
-        }
+    //バックグラウンドでループ再生
+    public void Play()
+    {
+        MediaPlayer.Play(_song);
+        MediaPlayer.IsRepeating = true;
+    }
 
-        public void LoadFile(string ファイル名)
-        {
-            _se = SoundEffect.FromFile(ファイル名);
-        }
+    static public void SetMasterVolume(double 音量 = 1.0)
+    {
+        MediaPlayer.Volume = (float)音量;
+    }
+}
 
-        public void Play()
-        {
+//Wavファイルを一度再生する
+public class Sound
+{
+    private SoundEffect _se;
 
-            _se.Play();
-        }
+    public void Load(string リソース名)
+    {
+        _se = GameManager._game.Content.Load<SoundEffect>(リソース名);
+    }
 
-        static public void SetMasterVolume(double 音量 = 1.0)
-        {
-            SoundEffect.MasterVolume = (float)音量;
-        }
+    public void LoadFile(string ファイル名)
+    {
+        _se = SoundEffect.FromFile(ファイル名);
+    }
 
+    public void Play()
+    {
+
+        _se.Play();
+    }
+
+    static public void SetMasterVolume(double 音量 = 1.0)
+    {
+        SoundEffect.MasterVolume = (float)音量;
     }
 
 }
+

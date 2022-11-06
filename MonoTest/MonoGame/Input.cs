@@ -7,94 +7,93 @@ using Microsoft.Xna.Framework.Input;
 using SpriteFontPlus;
 using System.IO;
 
-namespace MonoWrap
+namespace MonoWrap;
+
+public class Key
 {
-    public class Key
-    {
-        public bool on = false;
-        public bool off = false;
-        public bool hold = false;
-        public int holdCount = 0;
+    public bool on = false;
+    public bool off = false;
+    public bool hold = false;
+    public int holdCount = 0;
 
-        public void Update(bool isPush)
+    public void Update(bool isPush)
+    {
+        if (isPush == true)
         {
-            if (isPush == true)
-            {
-                on = hold;
-                off = false;
-                hold = true;
-                holdCount++;
-            }
-            else
-            {
-                off = hold;
-                on = false;
-                hold = false;
-                holdCount = 0;
-            }
+            on = hold;
+            off = false;
+            hold = true;
+            holdCount++;
+        }
+        else
+        {
+            off = hold;
+            on = false;
+            hold = false;
+            holdCount = 0;
+        }
+    }
+}
+
+public class Input
+{
+    static public Key[] keys = new Key[Enum.GetNames(typeof(Keys)).Length];
+
+    static public Point mouse = new Point(0,0);
+    static public Key mouseLeft = new Key();
+    static public Key mouseRight = new Key();
+    static public Key mouseMiddle = new Key();
+
+    static public int moveX = 0;
+    static public int moveY = 0;
+    static public int whell = 0;
+
+    static public void Init()
+    {
+        int key_count = Enum.GetNames(typeof(Keys)).Length;
+
+        for (int i = 0; i < key_count; i++)
+        {
+            keys[i] = new Key();
         }
     }
 
-    public class Input
+    static public void Update()
     {
-        static public Key[] keys = new Key[Enum.GetNames(typeof(Keys)).Length];
+        int key_count = Enum.GetNames(typeof(Keys)).Length;
 
-        static public Point mouse = new Point(0,0);
-        static public Key mouseLeft = new Key();
-        static public Key mouseRight = new Key();
-        static public Key mouseMiddle = new Key();
+        //マウス入力の更新
+        int mx = Mouse.GetState().X;
+        int my = Mouse.GetState().Y;
 
-        static public int moveX = 0;
-        static public int moveY = 0;
-        static public int whell = 0;
-
-        static public void Init()
+        if(GameManager._zoomRate != 1 )
         {
-            int key_count = Enum.GetNames(typeof(Keys)).Length;
-
-            for (int i = 0; i < key_count; i++)
-            {
-                keys[i] = new Key();
-            }
+            mx = mx / GameManager._zoomRate;
+            my = my / GameManager._zoomRate;
         }
 
-        static public void Update()
+        moveX = mx - mouse.x;
+        moveY = my - mouse.y;
+        mouse.x = mx;
+        mouse.y = my;
+
+        whell = Mouse.GetState().ScrollWheelValue;
+
+        mouseLeft.Update(Mouse.GetState().LeftButton == ButtonState.Pressed);
+        mouseRight.Update(Mouse.GetState().RightButton == ButtonState.Pressed);
+        mouseMiddle.Update(Mouse.GetState().MiddleButton == ButtonState.Pressed);
+
+        //キーボード入力の更新
+        for (int i=0;i< key_count; i++)
         {
-            int key_count = Enum.GetNames(typeof(Keys)).Length;
+            keys[i].Update(Keyboard.GetState().IsKeyDown((Keys)i) == true);
+        }
 
-            //マウス入力の更新
-            int mx = Mouse.GetState().X;
-            int my = Mouse.GetState().Y;
-
-            if(GameManager._zoomRate != 1 )
-            {
-                mx = mx / GameManager._zoomRate;
-                my = my / GameManager._zoomRate;
-            }
-
-            moveX = mx - mouse.x;
-            moveY = my - mouse.y;
-            mouse.x = mx;
-            mouse.y = my;
-
-            whell = Mouse.GetState().ScrollWheelValue;
-
-            mouseLeft.Update(Mouse.GetState().LeftButton == ButtonState.Pressed);
-            mouseRight.Update(Mouse.GetState().RightButton == ButtonState.Pressed);
-            mouseMiddle.Update(Mouse.GetState().MiddleButton == ButtonState.Pressed);
-
-            //キーボード入力の更新
-            for (int i=0;i< key_count; i++)
-            {
-                keys[i].Update(Keyboard.GetState().IsKeyDown((Keys)i) == true);
-            }
-
-            //ゲームパッド入力の更新
-            //とりあえず使わないので未実装
-            if (GamePad.GetState(0).IsConnected == false)
-            {
-                return;
-            }
+        //ゲームパッド入力の更新
+        //とりあえず使わないので未実装
+        if (GamePad.GetState(0).IsConnected == false)
+        {
+            return;
+        }
 		}
-    }
 }

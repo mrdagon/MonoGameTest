@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace POY
-{
-    //エンチャントマスタリーウィンドウ
-    public class EnchantMaster
-    {
+namespace POY;
 
-    }
+//エンチャントマスタリーウィンドウ
+public class EnchantMaster
+{
+
 }

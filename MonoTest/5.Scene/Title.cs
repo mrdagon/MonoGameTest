@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace POY
-{
-    public class TitleScene
-    {
+namespace POY;
 
-    }
+public class TitleScene
+{
+
 }

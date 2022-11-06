@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace POY
+namespace POY;
+
+//敵モンスター
+public class Monster : Battler
 {
-    //敵モンスター
-    public class Monster
-    {
-
-    }
-
+    //レベル
 }
+

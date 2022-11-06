@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
 
-namespace POY
-{
-    //鍛冶屋ウィンドウ
-    public class W_Shop
-    {
+namespace POY;
 
-    }
+//鍛冶屋ウィンドウ
+public class W_Shop
+{
+
 }
