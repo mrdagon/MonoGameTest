@@ -51,6 +51,7 @@ public class Font
 
     }
 
+    //読み込むfntファイルを指定tgaファイルは同じフォルダに置く
     //https://www.angelcode.com/products/bmfont/
     public void LoadFNT( string フォルダ名 , string リソース名)
     {

@@ -46,24 +46,24 @@ public class UI_Object
 
     }
 
-    Point GetPos()
+    Position GetPos()
     {
-        return new Point( GetX() , GetY() );
+        return new Position( GetX() , GetY() );
     }
 
-    Point GetPos(Rect レイアウト)
+    Position GetPos(Rect レイアウト)
     {
-        return new Point( GetX() + レイアウト.x , GetY() + レイアウト.y );
+        return new Position( GetX() + レイアウト.x , GetY() + レイアウト.y );
     }
 
-    Point GetCenterPos()
+    Position GetCenterPos()
     {
-        return new Point( GetCenterX() , GetCenterY() );
+        return new Position( GetCenterX() , GetCenterY() );
     }
 
-    Point GetCenterPos(Rect レイアウト)
+    Position GetCenterPos(Rect レイアウト)
     {
-        return new Point( GetCenterX() + レイアウト.x , GetCenterY() + レイアウト.y );
+        return new Position( GetCenterX() + レイアウト.x , GetCenterY() + レイアウト.y );
     }
 
     public int GetX()

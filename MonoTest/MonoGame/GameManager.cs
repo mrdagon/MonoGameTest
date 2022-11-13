@@ -100,16 +100,14 @@ public class GameManager
         _game.IsMouseVisible = is表示;
     }
 
-    static public void SetViewPort(Rect 描画領域 = null)
+    static public void SetViewPort(Rect 描画領域)
     {
-        if(描画領域 == null)
-        {
-            _game.GraphicsDevice.Viewport = new Viewport(0, 0, _graphDevice.PreferredBackBufferWidth, _graphDevice.PreferredBackBufferHeight);
-            return;
-        }
-
         Viewport vp = new Viewport(描画領域.x * _zoomRate, 描画領域.y * _zoomRate, 描画領域.w * _zoomRate, 描画領域.h * _zoomRate);
         _game.GraphicsDevice.Viewport = vp;
+    }
 
+    static public void ResetViewPort()
+    {
+        _game.GraphicsDevice.Viewport = new Viewport(0, 0, _graphDevice.PreferredBackBufferWidth, _graphDevice.PreferredBackBufferHeight);
     }
 }

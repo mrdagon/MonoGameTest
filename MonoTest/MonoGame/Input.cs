@@ -39,7 +39,7 @@ public class Input
 {
     static public Key[] keys = new Key[Enum.GetNames(typeof(Keys)).Length];
 
-    static public Point mouse = new Point(0,0);
+    static public Position mouse = new Position(0,0);
     static public Key mouseLeft = new Key();
     static public Key mouseRight = new Key();
     static public Key mouseMiddle = new Key();

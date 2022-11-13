@@ -15,7 +15,6 @@ public class EnumArray<T,TEnum> where T : new()
         {
             array[i] = new T();
         }
-
     }
 
     public T this[TEnum tenum]

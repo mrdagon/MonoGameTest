@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //エンチャントマスタリーウィンドウ
-public class EnchantMaster
+public class W_EnchantMaster
 {
 
 }

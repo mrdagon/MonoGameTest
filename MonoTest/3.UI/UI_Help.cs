@@ -11,14 +11,14 @@ public class UIHelp
     private UIHelp(){}
 
     //マウス位置とウィンドウサイズから、上下左右どちらの方向にウィンドウ出すか計算
-    private static Point DrawFrame(int x, int y)
+    private static Position DrawFrame(int x, int y)
     {
-        return new Point(x, y);
+        return new Position(x, y);
     }
 
-    private static Point DrawFrame(Rect rect)
+    private static Position DrawFrame(Rect rect)
     {
-        return new Point(x, y);
+        return new Position(rect.x, rect.y);
     }
 
     //テキストのみのヘルプ

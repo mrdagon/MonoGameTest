@@ -5,7 +5,8 @@ using MonoWrap;
 
 namespace POY;
 
-public class TitleScene
+//メンバー強化ウィンドウ
+public class W_EnchantCharacter
 {
 
 }

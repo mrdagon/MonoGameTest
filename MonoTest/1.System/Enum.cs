@@ -6,7 +6,6 @@ using MonoWrap;
 namespace POY;
 
 //各種列挙型
-
 public enum ModType
 {
 
@@ -17,12 +16,13 @@ public enum IconType
 
 }
 
-public enum SEType
+public enum SoundType
 {
-    決定
+    決定,
+    COUNT
 }
 
-public enum BGMType
+public enum MusicType
 {
 
 }
@@ -47,6 +47,8 @@ public enum OrbType
 
 }
 
-
-
-
+public enum SceneType
+{
+    タイトル,
+    メインゲーム
+}

@@ -22,9 +22,9 @@ public class Music
         _song = GameManager._game.Content.Load<Song>(リソース名);
     }
 
+    //バグるのでリソースの方を使う
     public void LoadFile(string ファイル名)
     {
-        //バグるからリソースの方を使う
         var uri = new Uri(ファイル名, UriKind.Relative);
         _song = Song.FromUri(ファイル名, uri);
     }

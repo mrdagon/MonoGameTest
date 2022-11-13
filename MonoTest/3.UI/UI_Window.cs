@@ -31,8 +31,8 @@ public class UI_Window
     public IconType アイコン;
 
     //座標
-    public Point 座標 = new Point(0, 0);;
-    public Point 相対座標 = new Point(0, 0);;//タイトル部分を除外した、スクロール位置計算後の左上座標
+    public Position 座標 = new Position(0, 0);
+    public Position 相対座標 = new Position(0, 0);//タイトル部分を除外した、スクロール位置計算後の左上座標
 
     public int 横幅;
     public int 縦幅 = 0;//タイトル部分は含まない
@@ -45,7 +45,7 @@ public class UI_Window
     public bool isスクロールバー表示 = true;
 
     //つかみ処理用、一時変数
-    public Point 掴み座標 = new Point(0, 0);
+    public Position 掴み座標 = new Position(0, 0);
     public bool is移動中 = false;
     public bool is上拡縮中 = false;
     public bool is下拡縮中 = false;

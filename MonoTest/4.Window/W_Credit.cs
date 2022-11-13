@@ -5,8 +5,8 @@ using MonoWrap;
 
 namespace POY;
 
-//メンバー強化ウィンドウ
-public class EnchantMember
+//設定変更ウィンドウ
+public class W_Credit
 {
 
 }

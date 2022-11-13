@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //待機メンバーウィンドウ
-public class W_Member
+public class W_Character
 {
 
 }

@@ -1,0 +1,16 @@
+﻿●公式サイト
+https://www.monogame.net/
+
+●リソースファイルの場所
+MonoTest/MonoTest/bin/Debug/net6.0/Contentの中に置く
+
+●ドットフォントの使い方
+ドットフォントは普通に使うとアンチエイリアスがかかってにじむので、ドットフォントとfntファイルを使って読み込む
+BMFontでttfファイルから、fntと画像ファイルを生成
+画像ファイルは一枚で収まるようにexport optionを設定する
+https://www.angelcode.com/products/bmfont/
+
+Font.LoadFNTでリソース読み込みを行う
+
+●BGM
+MP3ファイルの再生はcontent.mgcbを開いて取り込まないと不可

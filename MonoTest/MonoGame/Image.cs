@@ -72,7 +72,7 @@ public class Image
     }
 
 
-    public void Draw( Point 座標 , bool is反転 = false)
+    public void Draw( Position 座標 , bool is反転 = false)
     {
         Draw(座標.x,座標.y , is反転);
     }
@@ -88,7 +88,7 @@ public class Image
         GameManager._spriteBatch.Draw(_texture, new Vector2(座標X, 座標Y), _使用範囲, GameManager._drawingColor,0,new Vector2(0,0), GameManager._zoomRate , is反転 ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
     }
 
-    public void DrawRotate( Point 座標, double 拡大率 , double 角度 , bool is反転 = false)
+    public void DrawRotate( Position 座標, double 拡大率 , double 角度 , bool is反転 = false)
     {
         DrawRotate(座標.x, 座標.y, 拡大率, 角度, is反転);
     }

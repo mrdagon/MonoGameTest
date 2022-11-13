@@ -6,17 +6,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoWrap;
 
-public class Point
+public struct Position
 {
     public int x;
     public int y;
 
-    public Point(int x, int y)
+    public Position(int x, int y)
     {
         this.x = x;
         this.y = y;
     }
-    public bool Hit(Point 点)
+    public bool Hit(Position 点)
     {
         return (点.x == x && 点.y == y);
     }
@@ -34,15 +34,15 @@ public class Point
     }
 }
 
-public class Line
+public struct Line
 {
-    Point start;
-    Point end;
+    Position start;
+    Position end;
     
     public Line(int start_x , int start_y , int end_x , int end_y)
     {
-        this.start = new Point(start_x, start_y);
-        this.end = new Point(end_x, end_y);
+        this.start = new Position(start_x, start_y);
+        this.end = new Position(end_x, end_y);
     }
 
     private static Texture2D _blankTexture;
@@ -117,14 +117,22 @@ public class Line
 }
 
 
-public class Rect
+public struct Rect
 {
     public int x = 0;
     public int y = 0;
     public int w = 0;
     public int h = 0;
 
-    public bool Hit(Point 点)
+    Rect(int x,int y,int w,int h)
+    {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+    public bool Hit(Position 点)
     {
         return 点.Hit(this);
     }

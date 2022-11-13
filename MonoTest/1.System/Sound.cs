@@ -5,9 +5,9 @@ using MonoWrap;
 
 namespace POY;
 
-//効果音の対応
+//効果音の対応を代入
 public class SE
 {
-    readonly public static SEType 決定 = SEType.決定;
+    readonly public static SoundType 決定 = SoundType.決定;
 }
 
