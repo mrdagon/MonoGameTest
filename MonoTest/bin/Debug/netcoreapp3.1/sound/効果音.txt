@@ -1,7 +1,0 @@
-転生 loop001.wav
-宝箱取得 coin03.wav
-設備増設 chari13_a.wav
-チュートリアル表示 paper01.wav
-クエストクリア power33.wav
-製造クリック on09.wav
-攻撃クリック hit_p12.wav

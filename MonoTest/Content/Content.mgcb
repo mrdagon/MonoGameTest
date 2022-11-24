@@ -13,9 +13,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin BGM117-110921-yuuyakenagisa.mp3
+#begin Music/BGM117-110921-yuuyakenagisa.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:BGM117-110921-yuuyakenagisa.mp3
+/build:Music/BGM117-110921-yuuyakenagisa.mp3
 

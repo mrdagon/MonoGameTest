@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/Music/BGM117-110921-yuuyakenagisa.mp3</SourceFile>
+  <SourceTime>2022-07-24T13:58:40.6078103+09:00</SourceTime>
+  <DestFile>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/Music/BGM117-110921-yuuyakenagisa.xnb</DestFile>
+  <DestTime>2022-11-16T16:54:57.4881064+09:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-11T01:17:54+09:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-11T01:17:54+09:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/ganta/Desktop/MonoTest/MonoTest/Content/bin/DesktopGL/Content/Music/BGM117-110921-yuuyakenagisa.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>
