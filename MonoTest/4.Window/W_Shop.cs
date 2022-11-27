@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //鍛冶屋ウィンドウ
-public class W_Shop
+public class W_Shop : UI_Window
 {
 
 }

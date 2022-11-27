@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //クエスト一覧ウィンドウ
-public class W_Quest
+public class W_Quest : UI_Window
 {
 
 }

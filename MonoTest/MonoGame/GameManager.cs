@@ -46,6 +46,16 @@ public class GameManager
         _graphDevice.ApplyChanges();
     }
 
+    static public int GetWindowWidth()
+    {
+        return _graphDevice.PreferredBackBufferWidth / _zoomRate;
+    }
+
+    static public int GetWindowHeight()
+    {
+        return _graphDevice.PreferredBackBufferHeight / _zoomRate;
+    }
+
     static public void SetTitle(string タイトル文字列)
     {
         _game.Window.Title = タイトル文字列;

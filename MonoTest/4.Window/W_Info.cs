@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //マウスオーバーヘルプウィンドウ
-public class W_Info
+public class W_Info : UI_Window
 {
 
 }

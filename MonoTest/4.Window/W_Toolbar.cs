@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //チュートリアルウィンドウ
-public class W_Toolbar
+public class W_Toolbar : UI_Window
 {
 
 }

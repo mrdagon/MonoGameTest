@@ -124,7 +124,7 @@ public struct Rect
     public int w = 0;
     public int h = 0;
 
-    Rect(int x,int y,int w,int h)
+    public Rect(int x,int y,int w,int h)
     {
         this.x = x;
         this.y = y;

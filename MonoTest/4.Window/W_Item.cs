@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //アイテムウィンドウ
-public class W_Item
+public class W_Item : UI_Window
 {
 
 }

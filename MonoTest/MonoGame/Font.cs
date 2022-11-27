@@ -69,6 +69,15 @@ public class Font
 
     public void Draw(int 座標X , int 座標Y, Color 描画色 , string 描画する文字列 , FontPosition 文字寄せ = FontPosition.Left)
     {
+        if(文字寄せ == FontPosition.Mid )
+        {
+            座標X -= GetDrawWidth(描画する文字列) / 2;
+        }
+        else if (文字寄せ == FontPosition.Right)
+        {
+            座標X -= GetDrawWidth(描画する文字列);
+        }
+
         if (GameManager._zoomRate != 1)
         {
             座標X *= GameManager._zoomRate;
@@ -81,15 +90,6 @@ public class Font
             GameManager._drawingColor.B * 描画色.B / 255,
             GameManager._drawingColor.A * 描画色.A / 255
             );
-
-        if(文字寄せ == FontPosition.Mid )
-        {
-            座標X -= GetDrawWidth(描画する文字列) / 2;
-        }
-        else if (文字寄せ == FontPosition.Right)
-        {
-            座標X -= GetDrawWidth(描画する文字列);
-        }
 
         GameManager._spriteBatch.DrawString(font, 描画する文字列, new Vector2(座標X, 座標Y), c, 0, new Vector2(0, 0), GameManager._zoomRate, SpriteEffects.None, 0);
     }

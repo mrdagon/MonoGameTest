@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //はい／いいえウィンドウ
-public class W_Popup
+public class W_Popup : UI_Window
 {
 
 }

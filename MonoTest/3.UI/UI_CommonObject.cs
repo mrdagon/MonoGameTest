@@ -11,6 +11,9 @@ public class UI_Button : UI_Object
 {
     public string テキスト = "";
     public Image 画像 = null;
+    Frame 凸フレーム = null;
+    Frame 凹フレーム = null;
+    Frame 平フレーム = null;
 
     bool is押下 = false;
     int 押下状態 = 0;

@@ -12,6 +12,8 @@ public class Config
     public static int BGM音量;
     public static int SE音量;
     public static int 解像度設定 = 9;
+    public static int 解像度W = 1000;
+    public static int 解像度H = 1000;
     public static int 解像度X倍 = 1;
 
     public static int 言語設定 = 0;//0 日本語,1英語 ,2その他

@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //出撃中パーティウィンドウ
-public class W_Party
+public class W_Party : UI_Window
 {
 
 }

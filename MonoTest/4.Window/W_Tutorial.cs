@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //チュートリアルウィンドウ
-public class W_Tutorial
+public class W_Tutorial : UI_Window
 {
 
 }

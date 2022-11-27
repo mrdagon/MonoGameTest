@@ -45,7 +45,7 @@ public class MainGame : Game
         MainScene.This.Init();
 
         //テスト再生
-        ASound.メインBGM.Play();//再生テスト
+        //ASound.メインBGM.Play();//再生テスト
     }
 
     protected override void Update(GameTime gameTime)

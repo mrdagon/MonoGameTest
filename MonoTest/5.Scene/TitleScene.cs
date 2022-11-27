@@ -18,25 +18,48 @@ public class TitleScene
     W_Popup 削除確認ウィンドウ = new W_Popup();
     
     //ボタン
-    List<UI_Button> buttons = new List<UI_Button>();
+    List<UI_Button> buttonS = new List<UI_Button>();
+    UI_Button セーブスロット1 = new UI_Button();
+    UI_Button セーブスロット2 = new UI_Button();
+    UI_Button セーブスロット3 = new UI_Button();
+    UI_Button セーブ削除1 = new UI_Button();
+    UI_Button セーブ削除2 = new UI_Button();
+    UI_Button セーブ削除3 = new UI_Button();
+    UI_Button コンフィグボタン = new UI_Button();
+    UI_Button クレジットボタン = new UI_Button();
+    UI_Button 終了ボタン = new UI_Button();
 
     int スクロール値 = 0;
 
     public void Init()
     {
-        //オブジェクトの初期化
-        //セーブスロット３つと削除ボタン３つ
-        //コンフィグボタン
-        //クレジットボタン
-        //終了ボタン
+        //オブジェクトの初期化//
+        buttonS.Add(セーブスロット1);
+        buttonS.Add(セーブスロット2);
+        buttonS.Add(セーブスロット3);
+        buttonS.Add(セーブ削除1);
+        buttonS.Add(セーブ削除2);
+        buttonS.Add(セーブ削除3);
+        buttonS.Add(コンフィグボタン);
+        buttonS.Add(クレジットボタン);
+        buttonS.Add(終了ボタン);
+
+        //関数定義
 
         //サブウィンドウ初期化
-
+        コンフィグウィンドウ.Init();
+        クレジットウィンドウ.Init();
+        削除確認ウィンドウ.Init();
     }
 
     public void Process()
     {
         //背景スクロール処理
+        スクロール値++;
+        if( スクロール値 > GameManager.GetWindowWidth())
+        {
+            スクロール値 = 0;
+        }
     }
 
     public void Input()
@@ -44,7 +67,7 @@ public class TitleScene
         //ボタンクリック処理
 
         //
-        foreach(UI_Button button in buttons)
+        foreach(UI_Button button in buttonS)
         {
             button.CheckInput(0, 0);//座標補正無し
         }
@@ -53,42 +76,29 @@ public class TitleScene
     public void Draw()
     {
         Draw背景();
-
         //タイトル文字 - 画面中央に表示
+        int tx = GameManager.GetWindowWidth() / 2;
+        int ty = GameManager.GetWindowHeight() / 5;
+        AImage.タイトルロゴ.DrawRotate( tx , ty ,0.5 , 0);
 
         //ボタンの表示
-
-        //著作者表示
-
-
-        //テスト描画
-        Rect.Draw(400, 100, 200, 200, Color.Green);
-        Position.Draw(400, 100, Color.Black);
-
-        Design.Green.Draw(UIType.明ボタン, 10, 10, 50, 50);
-        Design.Blue.Draw(UIType.平ボタン, 10, 70, 50, 50);
-        Design.Brown.Draw(UIType.暗ボタン, 10, 130, 50, 50);
-        Design.Brown2.Draw(UIType.凸明ボタン, 10, 190, 50, 50);
-        Design.Wood.Draw(UIType.凸ボタン, 10, 250, 50, 50);
-        Design.BlueGrey.Draw(UIType.凸暗ボタン, 110, 10, 50, 50);
-        Design.BlueGrey.Draw(UIType.凹ボタン, 110, 70, 50, 50);
-        Design.Green.Draw(UIType.グループ明, 110, 130, 50, 50);
-        Design.Blue.Draw(UIType.グループ中, 110, 190, 50, 50);
-        Design.Brown.Draw(UIType.グループ暗, 110, 250, 50, 50);
-        Design.Brown2.Draw(UIType.タイトル, 210, 10, 50, 50);
-        Design.Wood.Draw(UIType.ウィンドウ, 210, 70, 50, 50);
-        Design.BlueGrey.Draw(UIType.フレーム, 210, 130, 50, 50);
-
-        for(int a=0;a<9;a++)
+        foreach (UI_Button button in buttonS)
         {
-            AImage.フレーム[a].Draw(10 + a / 3 * 50, 10 + a%3 * 50, 40, 40);
+            button.Draw();
         }
 
-        AFont.PM12.Draw(40, 40, Color.Black, "テスト描画\nMojiretu123");
+        //著作者表示
+        AFont.PM12.Draw(GameManager.GetWindowWidth() / 2 , GameManager.GetWindowHeight() * 9 / 10 , Color.White, "(C) 2022 Dagon", Font.FontPosition.Mid);
     }
 
     public void Draw背景()
     {
+        int w = GameManager.GetWindowWidth();
+        int h = GameManager.GetWindowHeight();
+
+        AImage.タイトル背景後.DrawExtend(スクロール値, 0 , w , h);
+        AImage.タイトル背景後.DrawExtend(スクロール値 - w, 0 , w , h);
+        AImage.タイトル背景前.DrawExtend(0, 0 , w, h);
     }
 
     public void LoadSaveTag()

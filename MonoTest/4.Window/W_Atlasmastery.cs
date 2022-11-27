@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //ダンジョンマスタリーウィンドウ
-public class W_Atlasmastery
+public class W_Atlasmastery : UI_Window
 {
 
 }

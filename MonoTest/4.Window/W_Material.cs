@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //素材ウィンドウ
-public class W_Material
+public class W_Material : UI_Window
 {
 
 }

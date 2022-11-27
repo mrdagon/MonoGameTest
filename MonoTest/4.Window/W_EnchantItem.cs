@@ -6,7 +6,7 @@ using MonoWrap;
 namespace POY;
 
 //アイテムエンチャントウィンドウ
-public class W_EnchantItem
+public class W_EnchantItem : UI_Window
 {
 
 }
