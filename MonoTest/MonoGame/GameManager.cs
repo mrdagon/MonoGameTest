@@ -10,6 +10,8 @@ public class GameManager
     static public SpriteBatch _spriteBatch;
     static public Color _drawingColor = Color.White;
     static public int _zoomRate = 1;
+    static public int _camera_x = 0;
+    static public int _camera_y = 0;
 
     public enum DrawMode
     {
@@ -30,6 +32,8 @@ public class GameManager
 
         game.Content.RootDirectory = "Content";
         game.IsMouseVisible = true;
+
+        game.TargetElapsedTime = System.TimeSpan.FromSeconds(1d / 60d);//60fpsに固定
 
         _graphDevice.ApplyChanges();
     }
@@ -119,5 +123,11 @@ public class GameManager
     static public void ResetViewPort()
     {
         _game.GraphicsDevice.Viewport = new Viewport(0, 0, _graphDevice.PreferredBackBufferWidth, _graphDevice.PreferredBackBufferHeight);
+    }
+
+    static public void SetCamera(int x , int y)
+    {
+        _camera_x = x;
+        _camera_y = y;
     }
 }

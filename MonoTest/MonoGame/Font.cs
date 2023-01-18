@@ -78,6 +78,9 @@ public class Font
             座標X -= GetDrawWidth(描画する文字列);
         }
 
+        座標X += GameManager._camera_x;
+        座標Y += GameManager._camera_y;
+
         if (GameManager._zoomRate != 1)
         {
             座標X *= GameManager._zoomRate;
@@ -98,6 +101,9 @@ public class Font
     {
         var ms = font.MeasureString(描画する文字列);
 
+        座標X += GameManager._camera_x;
+        座標Y += GameManager._camera_y;
+
         if (GameManager._zoomRate != 1)
         {
             座標X *= GameManager._zoomRate;
@@ -114,7 +120,7 @@ public class Font
             );
 
 
-        GameManager._spriteBatch.DrawString(font, 描画する文字列, new Vector2(座標X, 座標Y), c, (float)角度, new Vector2(ms.X / 2, ms.Y / 2), (float)拡大率, SpriteEffects.None, 0);
+        GameManager._spriteBatch.DrawString(font, 描画する文字列, new Vector2(座標X, 座標Y), c, (float)角度, new Vector2(ms.X/2/GameManager._zoomRate, ms.Y/ 2/GameManager._zoomRate), (float)拡大率, SpriteEffects.None, 0);
     }
 
     public int GetDrawWidth(string 描画する文字列)

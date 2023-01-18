@@ -22,8 +22,11 @@ public class MainGame : Game
     protected override void Initialize()
     {
         base.Initialize();
-        GameManager.SetTitle("Path of Yggdrasil");
+        GameManager.SetTitle("Hack and Slash Simulator(Kari)");
         GameManager.SetWindowSize(1280, 720);
+
+        GameManager.SetZoom(3);
+        GameManager.SetWindowSize(1920, 1080);//２倍ズーム時
     }
 
     //起動時に全リソースを一度に読み込む
@@ -55,6 +58,7 @@ public class MainGame : Game
 
         //デバッグ用にEscapeでセーブせず終了
         if (Keyboard.GetState().IsKeyDown(Keys.Escape) && CV.isデバッグ == true) { Exit(); }
+        if (GameParam.isゲーム終了 == true) { Exit(); }
 
         //入力&更新処理
         switch (GameParam.シーンタイプ)
@@ -90,27 +94,6 @@ public class MainGame : Game
                 TitleScene.This.Draw();
                 break;
         }
-        
-        /*
-        Rect.Draw(400, 100, 200, 200, Color.Green);
-        Position.Draw(400, 100, Color.Black);
-
-        Design.Green.Draw(UIType.明ボタン, 10, 10, 50, 50);
-        Design.Blue.Draw(UIType.平ボタン, 10, 70, 50, 50);
-        Design.Brown.Draw(UIType.暗ボタン, 10, 130, 50, 50);
-        Design.Brown2.Draw(UIType.凸明ボタン, 10, 190, 50, 50);
-        Design.Wood.Draw(UIType.凸ボタン, 10, 250, 50, 50);
-        Design.BlueGrey.Draw(UIType.凸暗ボタン, 110, 10, 50, 50);
-        Design.BlueGrey.Draw(UIType.凹ボタン, 110, 70, 50, 50);
-        Design.Green.Draw(UIType.グループ明, 110, 130, 50, 50);
-        Design.Blue.Draw(UIType.グループ中, 110, 190, 50, 50);
-        Design.Brown.Draw(UIType.グループ暗, 110, 250, 50, 50);
-        Design.Brown2.Draw(UIType.タイトル, 210, 10, 50, 50);
-        Design.Wood.Draw(UIType.ウィンドウ, 210, 70, 50, 50);
-        Design.BlueGrey.Draw(UIType.フレーム, 210, 130, 50, 50);
-
-        AFont.PM12.Draw(40, 40, Color.Black, "テスト描画\nMojiretu123");
-        */
 
         //ライブラリ必須処理
         GameManager.EndDraw();

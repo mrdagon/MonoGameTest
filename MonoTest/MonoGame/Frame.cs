@@ -213,6 +213,8 @@ public class Design
 
     public void Draw(UIType type, int x, int y, int w, int h)
     {
+        x += GameManager._camera_x;
+        y += GameManager._camera_y;
 
         switch (type)
         {

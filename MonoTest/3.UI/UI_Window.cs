@@ -11,7 +11,6 @@ public class UI_Window
     private bool is最小縮小;
 
     //
-
     public static readonly int タイトル枠高さ = 30;
     public static readonly int ツールバー高さ = 120;
 
@@ -62,16 +61,71 @@ public class UI_Window
 
     public void SetPos(int w, int h, bool is中央表示, bool isスクロールバー, bool is縦横固定)
     {
+        横幅 = w;
+        if( is縦横固定 == true )
+        {
+            縦幅 = h;
+            最小縦 = h;
+            最大縦 = h;
+            縦内部幅 = h;
+        }
+        else
+        {
+            最小縦 = h;
+            最大縦 = Config.解像度H;
+            縦内部幅 = h;
+        }
 
+        if( is中央表示 == true )
+        {
+            座標.x = Config.解像度W / 2 - 横幅 / 2;
+            座標.y = Config.解像度H / 2 - 横幅 / 2;
+        }
+
+        isスクロールバー表示 = isスクロールバー;
     }
 
     public void Draw()
     {
+        if( is表示 == false) { return; }
 
+        相対座標.x = 座標.x;
+        相対座標.y = 座標.y - スクロール位置 + タイトル枠高さ + 固定縦;
+
+        共通Draw();
+
+        Reset描画範囲(true);
+        //固定アイテムの描画
+        for( int a = fix_item.Count - 1 ; a >= 0; a--)
+        {
+            if (fix_item[a].is表示 == true) { fix_item[a].Draw(); }
+        }
+        Reset描画範囲(false);
+        //スクロールするアイテムの描画
+
+        for (int a = (int)item.Count - 1; a >= 0; a--)
+        {
+            if (item[a].is表示) { item[a].Draw(); }
+        }
+
+        GameManager.SetCamera(0, 0);
+        GameManager.ResetViewPort();
     }
 
     public void 共通Draw()
     {
+        //タイトル部分
+
+
+        //ウィンドウ名
+
+        //ウィンドウアイコン
+
+        //閉じるボタン/ヘルプボタン
+
+        //メイン描画部分
+
+        //スクロールバー
 
     }
 

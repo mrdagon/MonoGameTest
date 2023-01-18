@@ -207,12 +207,13 @@ public class UI_Object
         return true;
     }
 
-    //クリック操作
+    //左クリック操作
     public virtual void Click()
     {
         leftClickEvent();
     }
 
+    //右クリック操作
     public virtual void RightClick()
     {
         rightClickEvent();

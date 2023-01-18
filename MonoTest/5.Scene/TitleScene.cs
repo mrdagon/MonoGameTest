@@ -44,7 +44,63 @@ public class TitleScene
         buttonS.Add(クレジットボタン);
         buttonS.Add(終了ボタン);
 
-        //関数定義
+        //テキスト設定
+        セーブスロット1.テキスト = "Save Slot 1";
+        セーブスロット2.テキスト = "Save Slot 2";
+        セーブスロット3.テキスト = "Save Slot 3";
+        セーブ削除1.テキスト = "Delete";
+        セーブ削除2.テキスト = "Delete";
+        セーブ削除3.テキスト = "Delete";
+        コンフィグボタン.テキスト = "Setting";
+        クレジットボタン.テキスト = "Credit";
+        終了ボタン.テキスト = "Exit";
+
+        //フレーム設定
+        foreach (UI_Button button in buttonS)
+        {
+            button.フレーム = AImage.フレーム[4];
+        }
+
+        //クリック関数定義
+        セーブスロット1.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        セーブスロット2.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        セーブスロット3.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        セーブ削除1.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        セーブ削除2.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        セーブ削除3.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+        };
+        コンフィグボタン.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+            コンフィグウィンドウ.OpenPopup();
+        };
+        クレジットボタン.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+            クレジットウィンドウ.OpenPopup();
+        };
+        終了ボタン.leftClickEvent = () =>
+        {
+            ASound.効果音[SoundType.決定].Play();
+            GameParam.isゲーム終了 = true;
+        };
 
         //サブウィンドウ初期化
         コンフィグウィンドウ.Init();
@@ -54,6 +110,21 @@ public class TitleScene
 
     public void Process()
     {
+        int tx = GameManager.GetWindowWidth() / 2 - 50;
+        int ty = GameManager.GetWindowHeight() / 4;
+
+        //ボタン位置とサイズ補正
+        セーブスロット1.SetUI(new Rect(tx-50, ty       , 150, 30));
+        セーブスロット2.SetUI(new Rect(tx-50, ty + 35  , 150, 30));
+        セーブスロット3.SetUI(new Rect(tx-50, ty + 70  , 150, 30));
+        セーブ削除1.SetUI(new Rect(tx + 105, ty      , 60, 30));
+        セーブ削除2.SetUI(new Rect(tx + 105, ty + 35 , 60, 30));
+        セーブ削除3.SetUI(new Rect(tx + 105, ty + 70, 60, 30));
+
+        コンフィグボタン.SetUI(new Rect(tx, ty+110, 100, 30));
+        クレジットボタン.SetUI(new Rect(tx, ty+145, 100, 30));
+        終了ボタン.SetUI(new Rect(tx, ty+180, 100, 30));
+
         //背景スクロール処理
         スクロール値++;
         if( スクロール値 > GameManager.GetWindowWidth())
@@ -65,8 +136,6 @@ public class TitleScene
     public void Input()
     {
         //ボタンクリック処理
-
-        //
         foreach(UI_Button button in buttonS)
         {
             button.CheckInput(0, 0);//座標補正無し
@@ -78,8 +147,10 @@ public class TitleScene
         Draw背景();
         //タイトル文字 - 画面中央に表示
         int tx = GameManager.GetWindowWidth() / 2;
-        int ty = GameManager.GetWindowHeight() / 5;
-        AImage.タイトルロゴ.DrawRotate( tx , ty ,0.5 , 0);
+        int ty = GameManager.GetWindowHeight() / 8;
+        //AImage.タイトルロゴ.DrawRotate( tx , ty ,0.5 , 0);
+        AFont.PM12.DrawRotate(tx, ty, 3, 0, Color.Black, "Kari Title");
+
 
         //ボタンの表示
         foreach (UI_Button button in buttonS)
