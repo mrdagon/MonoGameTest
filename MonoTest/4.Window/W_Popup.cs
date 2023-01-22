@@ -8,5 +8,13 @@ namespace POY;
 //はい／いいえウィンドウ
 public class W_Popup : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

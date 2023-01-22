@@ -8,5 +8,13 @@ namespace POY;
 //アイテムウィンドウ
 public class W_Item : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

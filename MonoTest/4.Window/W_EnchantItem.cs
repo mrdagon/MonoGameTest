@@ -8,5 +8,13 @@ namespace POY;
 //アイテムエンチャントウィンドウ
 public class W_EnchantItem : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

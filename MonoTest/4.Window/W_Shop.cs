@@ -8,5 +8,13 @@ namespace POY;
 //鍛冶屋ウィンドウ
 public class W_Shop : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

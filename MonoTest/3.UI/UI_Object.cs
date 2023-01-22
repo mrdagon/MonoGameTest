@@ -20,8 +20,6 @@ public class UI_Object
 
     public UI_Object 親 = null;
 
-    public Frame UIフレーム = null;
-
     public Rect 形状;
     public int 整列x = 0;
     public int 整列y = 0;
@@ -161,11 +159,6 @@ public class UI_Object
         }
 
         isOver = false;
-    }
-
-    public void DrawUI()
-    {
-        UIフレーム.Draw(GetX(),GetY(), GetW(), GetH());
     }
 
     //クリック、ドロップ、マウスオーバー判定を処理 //クリック or ドロップでtrue

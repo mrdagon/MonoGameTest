@@ -8,11 +8,12 @@ using Microsoft.Xna.Framework.Input;
 
 namespace POY;
 
-public class TitleScene
+public class TitleScene : Scene
 {
     public static TitleScene This = new TitleScene();
 
     //サブ呼び出しするウィンドウ
+    List<UI_Window> windows = new List<UI_Window>();
     W_Config コンフィグウィンドウ = new W_Config();
     W_Credit クレジットウィンドウ = new W_Credit();
     W_Popup 削除確認ウィンドウ = new W_Popup();
@@ -34,6 +35,10 @@ public class TitleScene
     public void Init()
     {
         //オブジェクトの初期化//
+        コンフィグウィンドウ.Init();
+        クレジットウィンドウ.Init();
+        削除確認ウィンドウ.Init();
+
         buttonS.Add(セーブスロット1);
         buttonS.Add(セーブスロット2);
         buttonS.Add(セーブスロット3);
@@ -131,10 +136,23 @@ public class TitleScene
         {
             スクロール値 = 0;
         }
+
+        //ウィンドウの更新
+        foreach (var it in UI_Window.ポップアップウィンドウ)
+        {
+            it.Update();
+        }
     }
 
     public void Input()
     {
+        //ポップアップある時はポップアップウィンドウのみ操作可能
+        if( UI_Window.ポップアップウィンドウ.Count != 0 )
+        {
+            UI_Window.ポップアップウィンドウ[UI_Window.ポップアップウィンドウ.Count - 1].Input();
+            return;
+        }
+
         //ボタンクリック処理
         foreach(UI_Button button in buttonS)
         {
@@ -151,7 +169,6 @@ public class TitleScene
         //AImage.タイトルロゴ.DrawRotate( tx , ty ,0.5 , 0);
         AFont.PM12.DrawRotate(tx, ty, 3, 0, Color.Black, "Kari Title");
 
-
         //ボタンの表示
         foreach (UI_Button button in buttonS)
         {
@@ -159,7 +176,20 @@ public class TitleScene
         }
 
         //著作者表示
-        AFont.PM12.Draw(GameManager.GetWindowWidth() / 2 , GameManager.GetWindowHeight() * 9 / 10 , Color.White, "(C) 2022 Dagon", Font.FontPosition.Mid);
+        AFont.PM12.Draw(GameManager.GetWindowWidth() / 2, GameManager.GetWindowHeight() * 9 / 10, Color.White, "(C) 2022 Dagon", Font.FontPosition.Mid);
+
+        //ポップアップウィンドウの表示
+        if (UI_Window.ポップアップウィンドウ.Count > 0)
+        {
+            GameManager.SetDrawMode(GameManager.DrawMode.AlphaBlend);
+            Rect.Draw(0, 0, GameManager.GetWindowWidth(), GameManager.GetWindowHeight(), new Color(0, 0, 0, 128));
+            GameManager.SetDrawMode();
+
+            foreach ( var it in UI_Window.ポップアップウィンドウ)
+            {
+                it.Draw();
+            }
+        }
     }
 
     public void Draw背景()

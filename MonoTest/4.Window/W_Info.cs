@@ -8,5 +8,13 @@ namespace POY;
 //マウスオーバーヘルプウィンドウ
 public class W_Info : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

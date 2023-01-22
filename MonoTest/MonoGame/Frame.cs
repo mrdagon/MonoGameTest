@@ -48,6 +48,9 @@ public class Frame
         int w = _枠画像[0].GetWidth();
         int h = _枠画像[0].GetHeight();
 
+        座標X -= GameManager._camera_x * GameManager._zoomRate;
+        座標Y -= GameManager._camera_y * GameManager._zoomRate;
+
         //四隅
         _枠画像[0].Draw(座標X, 座標Y, false);
         _枠画像[2].Draw(座標X+幅-w, 座標Y, false);
@@ -63,8 +66,16 @@ public class Frame
         _枠画像[4].DrawExtend(座標X + w, 座標Y + h, 幅 - w * 2, 高さ - h*2);
     }
 
+    public void Draw(Rect 形状)
+    {
+        Draw(形状.x, 形状.y, 形状.w, 形状.h);
+    }
+
     public void DrawGauge(int 座標X, int 座標Y, int 幅, int 高さ , int 余白 , double 割合)
     {
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
+
         Draw(座標X, 座標Y, 幅, 高さ);
 
         int w = _ゲージ画像[0].GetWidth();
@@ -213,8 +224,8 @@ public class Design
 
     public void Draw(UIType type, int x, int y, int w, int h)
     {
-        x += GameManager._camera_x;
-        y += GameManager._camera_y;
+        x += GameManager._camera_x * GameManager._zoomRate;
+        y += GameManager._camera_y * GameManager._zoomRate;
 
         switch (type)
         {

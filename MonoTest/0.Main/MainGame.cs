@@ -27,6 +27,7 @@ public class MainGame : Game
 
         GameManager.SetZoom(3);
         GameManager.SetWindowSize(1920, 1080);//２倍ズーム時
+        Config.解像度X倍 = 3;
     }
 
     //起動時に全リソースを一度に読み込む

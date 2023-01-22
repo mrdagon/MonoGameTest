@@ -36,6 +36,8 @@ public class AImage
         フレーム[6].LoadFile("Content/Frame/frame_04.png");
         フレーム[7].LoadFile("Content/Frame/frame_05.png");
         フレーム[8].LoadFile("Content/Frame/frame_06.png");
+
+        UI_Window.SetFrameFont(フレーム[0], フレーム[0],フレーム[0],フレーム[0],フレーム[0],AFont.PM12);
     }
 }
 

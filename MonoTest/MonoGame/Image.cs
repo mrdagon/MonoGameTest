@@ -79,8 +79,8 @@ public class Image
 
     public void Draw(int 座標X, int 座標Y, bool is反転 = false)
     {
-        座標X += GameManager._camera_x;
-        座標Y += GameManager._camera_y;
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
 
         if ( GameManager._zoomRate != 1)
         {
@@ -98,8 +98,8 @@ public class Image
 
     public void DrawRotate(int 座標X ,int 座標Y, double 拡大率, double 角度, bool is反転 = false)
     {
-        座標X += GameManager._camera_x;
-        座標Y += GameManager._camera_y;
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
 
         if (GameManager._zoomRate != 1)
         {
@@ -113,8 +113,8 @@ public class Image
 
     public void DrawExtend(int 座標X, int 座標Y , int 幅 , int 高さ)
     {
-        座標X += GameManager._camera_x;
-        座標Y += GameManager._camera_y;
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
 
         if (GameManager._zoomRate != 1)
         {

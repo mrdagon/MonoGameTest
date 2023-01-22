@@ -8,5 +8,13 @@ namespace POY;
 //素材ウィンドウ
 public class W_Material : UI_Window
 {
+    public override void Init()
+    {
 
+    }
+
+    public override void Update()
+    {
+
+    }
 }

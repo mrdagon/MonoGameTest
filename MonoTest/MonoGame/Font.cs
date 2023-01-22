@@ -78,8 +78,8 @@ public class Font
             座標X -= GetDrawWidth(描画する文字列);
         }
 
-        座標X += GameManager._camera_x;
-        座標Y += GameManager._camera_y;
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
 
         if (GameManager._zoomRate != 1)
         {
@@ -97,12 +97,23 @@ public class Font
         GameManager._spriteBatch.DrawString(font, 描画する文字列, new Vector2(座標X, 座標Y), c, 0, new Vector2(0, 0), GameManager._zoomRate, SpriteEffects.None, 0);
     }
 
+    //縁取り文字描画
+    public void DrawEdge(int 座標X, int 座標Y, Color 描画色 , Color 縁色 , string 描画する文字列, FontPosition 文字寄せ = FontPosition.Left)
+    {
+        Draw(座標X+1, 座標Y, 縁色, 描画する文字列, 文字寄せ);
+        Draw(座標X-1, 座標Y, 縁色, 描画する文字列, 文字寄せ);
+        Draw(座標X, 座標Y+1, 縁色, 描画する文字列, 文字寄せ);
+        Draw(座標X, 座標Y-1, 縁色, 描画する文字列, 文字寄せ);
+
+        Draw(座標X, 座標Y, 描画色, 描画する文字列, 文字寄せ);
+    }
+
     public void DrawRotate(int 座標X, int 座標Y, double 拡大率, double 角度, Color 描画色, string 描画する文字列)
     {
         var ms = font.MeasureString(描画する文字列);
 
-        座標X += GameManager._camera_x;
-        座標Y += GameManager._camera_y;
+        座標X += GameManager._camera_x * GameManager._zoomRate;
+        座標Y += GameManager._camera_y * GameManager._zoomRate;
 
         if (GameManager._zoomRate != 1)
         {

@@ -28,8 +28,8 @@ public struct Position
 
     static public void Draw(int x,int y, Color color)
     {
-        x += GameManager._camera_x;
-        y += GameManager._camera_y;
+        x += GameManager._camera_x * GameManager._zoomRate;
+        y += GameManager._camera_y * GameManager._zoomRate;
 
         Rect.Draw(x, y, GameManager._zoomRate, GameManager._zoomRate, color);
 
@@ -58,10 +58,10 @@ public struct Line
             _blankTexture.SetData(new[] { Color.White });
         }
 
-        start_x += GameManager._camera_x;
-        start_y += GameManager._camera_y;
-        end_x += GameManager._camera_x;
-        end_y += GameManager._camera_y;
+        start_x += GameManager._camera_x * GameManager._zoomRate;
+        start_y += GameManager._camera_y * GameManager._zoomRate;
+        end_x += GameManager._camera_x * GameManager._zoomRate;
+        end_y += GameManager._camera_y * GameManager._zoomRate;
 
         if (GameManager._zoomRate != 1)
         {
@@ -168,10 +168,10 @@ public struct Rect
             _blankTexture.SetData(new[] { Color.White });
         }
 
-        x += GameManager._camera_x;
-        y += GameManager._camera_y;
+        x += GameManager._camera_x * GameManager._zoomRate;
+        y += GameManager._camera_y * GameManager._zoomRate;
 
-        if( GameManager._zoomRate != 1 && is塗りつぶし == true)
+        if ( GameManager._zoomRate != 1 && is塗りつぶし == true)
         {
             x *= GameManager._zoomRate;
             y *= GameManager._zoomRate;

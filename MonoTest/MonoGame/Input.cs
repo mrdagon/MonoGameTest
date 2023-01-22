@@ -20,7 +20,7 @@ public class Key
     {
         if (isPush == true)
         {
-            on = hold;
+            on = !hold;
             off = false;
             hold = true;
             holdCount++;
