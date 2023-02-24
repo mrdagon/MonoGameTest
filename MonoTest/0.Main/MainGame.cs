@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*
+ Copyright © 2023- Dagonn
+ License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+*/
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SpriteFontPlus;
@@ -25,9 +29,9 @@ public class MainGame : Game
         GameManager.SetTitle("Hack and Slash Simulator(Kari)");
         GameManager.SetWindowSize(1280, 720);
 
-        GameManager.SetZoom(3);
-        GameManager.SetWindowSize(1920, 1080);//２倍ズーム時
-        Config.解像度X倍 = 3;
+        GameManager.SetZoom(2);
+        GameManager.SetWindowSize(1280, 720);//２倍ズーム時
+        Config.解像度X倍 = 2;
     }
 
     //起動時に全リソースを一度に読み込む

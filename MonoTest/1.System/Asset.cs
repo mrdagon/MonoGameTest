@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ Copyright © 2023- Dagonn
+ License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using MonoWrap;
@@ -9,6 +13,7 @@ namespace POY;
 public class AImage
 {
     public static EnumArray<Frame, int> フレーム = new EnumArray<Frame, int>(9);
+    public static EnumArray<Image, IconType> アイコン = new EnumArray<Image, IconType>((int)(IconType.COUNT));
 
     public static Image タイトルロゴ = new Image();
     public static Image タイトル背景前 = new Image();
@@ -19,6 +24,9 @@ public class AImage
 
     public static void Load()
     {
+        //アイコン素材
+        アイコン[IconType.仮].LoadFile("Content/Icon/歯車.png");
+
         //タイトル用素材
         タイトルロゴ.LoadFile("Content/System/title.png");
         タイトル背景前.LoadFile("Content/Back/middleground.png");

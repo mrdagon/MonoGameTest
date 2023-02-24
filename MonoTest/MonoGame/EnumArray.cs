@@ -1,8 +1,12 @@
+﻿/*
+ Copyright © 2023- Dagonn
+ License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+*/
 using System;
 
 namespace MonoWrap;
 
-//����̗񋓌^�ł̂݃A�N�Z�X�\�ȃR���e�i
+//特定の列挙型でのみアクセス可能なコンテナ
 public class EnumArray<T,TEnum> where T : new()
 {
     T[] array;
