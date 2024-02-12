@@ -5,9 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
 //各種実績の達成状況
 public class Archive

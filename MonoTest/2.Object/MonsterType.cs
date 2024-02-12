@@ -5,9 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
 //モンスターの種族
 public class MonsterType

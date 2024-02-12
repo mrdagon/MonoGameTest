@@ -4,7 +4,7 @@
 */
 using System;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 public static class Program
 {

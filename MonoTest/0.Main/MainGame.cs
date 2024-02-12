@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework.Input;
 using SpriteFontPlus;
 using System.IO;
 
-using POY;
+using CARD_IDLE;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 public class MainGame : Game
 {
@@ -37,20 +37,20 @@ public class MainGame : Game
     //起動時に全リソースを一度に読み込む
     protected override void LoadContent()
     {
-        MonoWrap.GameManager.InitSprite(GraphicsDevice);
+        MONO_WRAP.GameManager.InitSprite(GraphicsDevice);
 
         //ここでリソースを読み込む
         AImage.Load();
         AFont.Load();
         ASound.Load();
-        Design.Load();
+        //Design.Load();
 
         Music.SetMasterVolume(0.05);
         Sound.SetMasterVolume(0.01);
 
         //ここでパラメータの初期化
-        TitleScene.This.Init();
-        MainScene.This.Init();
+        P_Title.This.Init();
+        P_Main.This.Init();
 
         //テスト再生
         //ASound.メインBGM.Play();//再生テスト
@@ -69,13 +69,13 @@ public class MainGame : Game
         switch (GameParam.シーンタイプ)
         {
             case SceneType.メインゲーム:
-                MainScene.This.Input();
-                MainScene.This.Process();
+                P_Main.This.Update();
+                P_Main.This.Draw();
                 break;
             case SceneType.タイトル:
-                TitleScene.This.Input();
-                TitleScene.This.Process();
-                break;        
+                P_Title.This.Update();
+                P_Title.This.Draw();
+                break;
         }
 
         //ライブラリ必須処理
@@ -93,10 +93,10 @@ public class MainGame : Game
         switch (GameParam.シーンタイプ)
         {
             case SceneType.メインゲーム:
-                MainScene.This.Draw();
+                P_Main.This.Draw();
                 break;
             case SceneType.タイトル:
-                TitleScene.This.Draw();
+                P_Title.This.Draw();
                 break;
         }
 

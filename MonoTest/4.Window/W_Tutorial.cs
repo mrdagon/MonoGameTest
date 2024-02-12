@@ -5,11 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//チュートリアルウィンドウ
+//チュートリアルメッセージ用ウィンドウ
 public class W_Tutorial : UI_Window
 {
     public override void Init()

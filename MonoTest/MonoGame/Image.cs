@@ -12,7 +12,7 @@ using SpriteFontPlus;
 using System.IO;
 
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 public class Image
 {

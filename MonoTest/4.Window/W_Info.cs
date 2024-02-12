@@ -5,11 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//マウスオーバーヘルプウィンドウ
+//各種マウスオーバーヘルプウィンドウ
 public class W_Info : UI_Window
 {
     public override void Init()

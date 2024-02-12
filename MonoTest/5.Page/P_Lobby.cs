@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//エンチャントマスタリーウィンドウ
-public class W_Facility : UI_Window
+//設定変更ウィンドウ
+public class P_Lobby : UI_Page
 {
     public override void Init()
     {

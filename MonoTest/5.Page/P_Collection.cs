@@ -1,15 +1,16 @@
 ﻿/*
  Copyright © 2023- Dagonn
  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
-*/using System;
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//統計情報ウィンドウ
-public class W_Status : UI_Window
+//設定変更ウィンドウ
+public class P_Collection : UI_Page
 {
     public override void Init()
     {

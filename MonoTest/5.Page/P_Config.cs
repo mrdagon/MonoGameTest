@@ -5,13 +5,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 using Microsoft.Xna.Framework;
 
-namespace POY;
+namespace CARD_IDLE;
 
 //設定変更ウィンドウ
-public class W_Config : UI_Window
+public class P_Config : UI_Page
 {
     class UI_BGM音量 : UI_Object
     {
@@ -19,7 +19,7 @@ public class W_Config : UI_Window
         {
             AImage.フレーム[0].Draw(形状);
             AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, "BGM");
-            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, W_Config.現在BGM音量.ToString() ,Font.FontPosition.Mid);
+            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, P_Config.現在BGM音量.ToString() ,Font.FontPosition.Mid);
         }
     }
 
@@ -29,7 +29,7 @@ public class W_Config : UI_Window
         {
             AImage.フレーム[0].Draw(形状);
             AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, "BGM");
-            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, W_Config.現在SE音量.ToString(), Font.FontPosition.Mid);
+            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, P_Config.現在SE音量.ToString(), Font.FontPosition.Mid);
         }
     }
 
@@ -39,7 +39,7 @@ public class W_Config : UI_Window
         {
             AImage.フレーム[0].Draw(形状);
             AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, "BGM");
-            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, W_Config.現在解像度X倍.ToString() + "倍", Font.FontPosition.Mid);
+            AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, P_Config.現在解像度X倍.ToString() + "倍", Font.FontPosition.Mid);
         }
     }
 
@@ -51,7 +51,7 @@ public class W_Config : UI_Window
             AFont.PM12.DrawEdge(形状.x, 形状.y, Color.White, Color.Black, "BGM");
 
             string text = "";
-            switch (W_Config.現在言語)
+            switch (P_Config.現在言語)
             {
                 case 0: text = "日本語"; break;
                 case 1: text = "英語"; break;
@@ -77,7 +77,6 @@ public class W_Config : UI_Window
     UI_Button 言語マイナスボタン = new UI_Button();
 
     UI_Button 決定ボタン = new UI_Button();
-    UI_Button キャンセルボタン = new UI_Button();
 
     public static int 現在BGM音量 = 0;
     public static int 現在SE音量 = 0;
@@ -86,9 +85,6 @@ public class W_Config : UI_Window
 
     public override void Init()
     {
-        is閉じるボタン = false;
-        isヘルプボタン = false;
-
         現在BGM音量 = Config.BGM音量;
         現在SE音量 = Config.SE音量;
         現在解像度X倍 = Config.解像度X倍;
@@ -110,7 +106,7 @@ public class W_Config : UI_Window
         AddItem(言語マイナスボタン);
 
         AddItem(決定ボタン);
-        AddItem(キャンセルボタン);
+
         //フレーム設定
         BGMプラスボタン.フレーム = AImage.フレーム[4];
         BGMマイナスボタン.フレーム = AImage.フレーム[4];
@@ -122,7 +118,6 @@ public class W_Config : UI_Window
         言語マイナスボタン.フレーム = AImage.フレーム[4];
 
         決定ボタン.フレーム = AImage.フレーム[4];
-        キャンセルボタン.フレーム = AImage.フレーム[4];
 
         //クリックイベントの追加
         BGMプラスボタン.leftClickEvent = () =>
@@ -160,23 +155,12 @@ public class W_Config : UI_Window
 
         決定ボタン.leftClickEvent = () =>
         {
-            ClosePopup(1);
-        };
-        キャンセルボタン.leftClickEvent = () =>
-        {
-            ClosePopup(0);
+
         };
     }
 
     public override void Update()
     {
-        //全体大きさ
-        座標.x = 20;
-        座標.y = 20;
-
-        横幅 = 500;
-        縦幅 = 300;
-
         //オブジェクト位置
         BGM音量.形状 = new Rect(0, 0, 100, 100);
         SE音量.形状 = new Rect(0, 0, 100, 100);
@@ -193,6 +177,5 @@ public class W_Config : UI_Window
         言語マイナスボタン.形状 = new Rect(0, 0, 100, 100);
 
         決定ボタン.形状 = new Rect(100, 0, 100, 100);
-        キャンセルボタン.形状 = new Rect(200, 100, 100, 100);
     }
 }

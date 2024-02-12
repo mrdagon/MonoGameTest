@@ -5,11 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//はい／いいえウィンドウ
+//データ削除用、はい／いいえウィンドウ
 public class W_Popup : UI_Window
 {
     public override void Init()

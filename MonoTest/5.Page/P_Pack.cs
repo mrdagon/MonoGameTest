@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 
-namespace POY;
+namespace CARD_IDLE;
 
 //設定変更ウィンドウ
-public class W_Credit : UI_Window
+public class P_Pack : UI_Page
 {
     public override void Init()
     {

@@ -8,7 +8,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 public struct Position
 {
@@ -126,7 +126,6 @@ public struct Line
 
 
 }
-
 
 public struct Rect
 {

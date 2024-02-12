@@ -4,7 +4,7 @@
 */
 using System;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 //特定の列挙型でのみアクセス可能なコンテナ
 public class EnumArray<T,TEnum> where T : new()

@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 public class GameManager
 {

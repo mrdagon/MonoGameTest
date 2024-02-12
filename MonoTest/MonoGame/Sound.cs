@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Audio;
 using SpriteFontPlus;
 using System.IO;
 
-namespace MonoWrap;
+namespace MONO_WRAP;
 
 //MP3ファイルをループ再生する
 public class Music

@@ -5,21 +5,21 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace POY;
+namespace CARD_IDLE;
 
-public class TitleScene : Scene
+public class P_Title : UI_Page
 {
-    public static TitleScene This = new TitleScene();
+    public static P_Title This = new P_Title();
 
     //サブ呼び出しするウィンドウ
     List<UI_Window> windows = new List<UI_Window>();
-    W_Config コンフィグウィンドウ = new W_Config();
-    W_Credit クレジットウィンドウ = new W_Credit();
+    P_Config コンフィグウィンドウ = new P_Config();
+    P_Credit クレジットウィンドウ = new P_Credit();
     W_Popup 削除確認ウィンドウ = new W_Popup();
     
     //ボタン
@@ -36,7 +36,7 @@ public class TitleScene : Scene
 
     int スクロール値 = 0;
 
-    public void Init()
+    public override void Init()
     {
         //オブジェクトの初期化//
         コンフィグウィンドウ.Init();
@@ -98,12 +98,10 @@ public class TitleScene : Scene
         コンフィグボタン.leftClickEvent = () =>
         {
             ASound.効果音[SoundType.決定].Play();
-            コンフィグウィンドウ.OpenPopup();
         };
         クレジットボタン.leftClickEvent = () =>
         {
             ASound.効果音[SoundType.決定].Play();
-            クレジットウィンドウ.OpenPopup();
         };
         終了ボタン.leftClickEvent = () =>
         {
@@ -117,7 +115,7 @@ public class TitleScene : Scene
         削除確認ウィンドウ.Init();
     }
 
-    public void Process()
+    public override void Update()
     {
         int tx = GameManager.GetWindowWidth() / 2 - 50;
         int ty = GameManager.GetWindowHeight() / 4;
@@ -148,25 +146,8 @@ public class TitleScene : Scene
         }
     }
 
-    public void Input()
+    public override void Draw()
     {
-        //ポップアップある時はポップアップウィンドウのみ操作可能
-        if( UI_Window.ポップアップウィンドウ.Count != 0 )
-        {
-            UI_Window.ポップアップウィンドウ[UI_Window.ポップアップウィンドウ.Count - 1].Input();
-            return;
-        }
-
-        //ボタンクリック処理
-        foreach(UI_Button button in buttonS)
-        {
-            button.CheckInput(0, 0);//座標補正無し
-        }
-    }
-
-    public void Draw()
-    {
-        Draw背景();
         //タイトル文字 - 画面中央に表示
         int tx = GameManager.GetWindowWidth() / 2;
         int ty = GameManager.GetWindowHeight() / 8;
@@ -194,16 +175,6 @@ public class TitleScene : Scene
                 it.Draw();
             }
         }
-    }
-
-    public void Draw背景()
-    {
-        int w = GameManager.GetWindowWidth();
-        int h = GameManager.GetWindowHeight();
-
-        AImage.タイトル背景後.DrawExtend(スクロール値, 0 , w , h);
-        AImage.タイトル背景後.DrawExtend(スクロール値 - w, 0 , w , h);
-        AImage.タイトル背景前.DrawExtend(0, 0 , w, h);
     }
 
     public void LoadSaveTag()

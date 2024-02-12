@@ -5,13 +5,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoWrap;
+using MONO_WRAP;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace POY;
+namespace CARD_IDLE;
 
-//ウィンドウベースクラス
+//ウィンドウベースクラス-削除時の警告専用
 public class UI_Window
 {
     private bool is最小縮小;
@@ -191,33 +191,33 @@ public class UI_Window
         相対座標.y = 座標.y - スクロール位置 + タイトル枠高さ + 固定縦;
 
         //ウィンドウ範囲内の時の操作
-        if (MonoWrap.Input.mouse.x / Config.解像度X倍 >= 座標.x &&
-            MonoWrap.Input.mouse.x / Config.解像度X倍 <= 座標.x + 横幅 &&
-            MonoWrap.Input.mouse.y / Config.解像度X倍 >= 座標.y &&
-            MonoWrap.Input.mouse.y / Config.解像度X倍 <= 座標.y + 縦幅 + タイトル枠高さ)
+        if (MONO_WRAP.Input.mouse.x / Config.解像度X倍 >= 座標.x &&
+            MONO_WRAP.Input.mouse.x / Config.解像度X倍 <= 座標.x + 横幅 &&
+            MONO_WRAP.Input.mouse.y / Config.解像度X倍 >= 座標.y &&
+            MONO_WRAP.Input.mouse.y / Config.解像度X倍 <= 座標.y + 縦幅 + タイトル枠高さ)
         {
             is操作 = is操作 || ObjectInput();
         }
 
-        return is最前面へ移動 || is操作 || new Rect(座標.x, 座標.y, 横幅, タイトル枠高さ + 縦幅).Hit(MonoWrap.Input.mouse);
+        return is最前面へ移動 || is操作 || new Rect(座標.x, 座標.y, 横幅, タイトル枠高さ + 縦幅).Hit(MONO_WRAP.Input.mouse);
     }
 
     //ドラッグ移動、拡大、縮小、閉じる、ホイール操作
     public bool 共通Input()
     {
-        Position マウス座標 = new Position(MonoWrap.Input.mouse.x , MonoWrap.Input.mouse.y);
+        Position マウス座標 = new Position(MONO_WRAP.Input.mouse.x , MONO_WRAP.Input.mouse.y);
 
         //ホイール操作
-        if (isスクロールバー表示 && new Rect(座標.x, 座標.y + タイトル枠高さ, 横幅, 縦幅).Hit(MonoWrap.Input.mouse) && MonoWrap.Input.whell != 0 && !is下拡縮中 && !is上拡縮中 && !isスクロール中)
+        if (isスクロールバー表示 && new Rect(座標.x, 座標.y + タイトル枠高さ, 横幅, 縦幅).Hit(MONO_WRAP.Input.mouse) && MONO_WRAP.Input.whell != 0 && !is下拡縮中 && !is上拡縮中 && !isスクロール中)
         {
-            スクロール位置 -= MonoWrap.Input.whell * 1;// CV::スクロール感度;
+            スクロール位置 -= MONO_WRAP.Input.whell * 1;// CV::スクロール感度;
 
             if (スクロール位置 > 縦内部幅 - 縦幅) { スクロール位置 = 縦内部幅 - 縦幅; }
             if (スクロール位置 < 0) { スクロール位置 = 0; }
         }
 
         //左押してない場合共通操作なし
-        if (MonoWrap.Input.mouseLeft.hold == false)
+        if (MONO_WRAP.Input.mouseLeft.hold == false)
         {
             is移動中 = false;
             is上拡縮中 = false;
@@ -261,13 +261,13 @@ public class UI_Window
                 is最小縮小 = false;
             }
 
-            if (座標.y > MonoWrap.Input.mouse.y + 5 && MonoWrap.Input.moveY > 0)
+            if (座標.y > MONO_WRAP.Input.mouse.y + 5 && MONO_WRAP.Input.moveY > 0)
             {
                 return true;
             }
 
-            縦幅 -= MonoWrap.Input.moveY;
-            座標.y += MonoWrap.Input.moveY;
+            縦幅 -= MONO_WRAP.Input.moveY;
+            座標.y += MONO_WRAP.Input.moveY;
 
             if (座標.y < ツールバー高さ)
             {
@@ -301,12 +301,12 @@ public class UI_Window
                 is最小縮小 = false;
             }
 
-            if (座標.y + 縦幅 < MonoWrap.Input.mouse.y - タイトル枠高さ - 5 && MonoWrap.Input.moveY < 0)
+            if (座標.y + 縦幅 < MONO_WRAP.Input.mouse.y - タイトル枠高さ - 5 && MONO_WRAP.Input.moveY < 0)
             {
                 return true;
             }
 
-            縦幅 += MonoWrap.Input.moveY;
+            縦幅 += MONO_WRAP.Input.moveY;
 
             if (縦幅 < 最小縦)
             {
@@ -322,14 +322,14 @@ public class UI_Window
             マウス座標.y > 座標.y + タイトル枠高さ &&
             マウス座標.y < 座標.y + タイトル枠高さ + 縦幅)
         {
-            スクロール位置 += MonoWrap.Input.moveY / Config.解像度X倍 * 縦内部幅 / 縦幅;
+            スクロール位置 += MONO_WRAP.Input.moveY / Config.解像度X倍 * 縦内部幅 / 縦幅;
         }
 
         if (スクロール位置 > 縦内部幅 - 縦幅) { スクロール位置 = 縦内部幅 - 縦幅; }
         if (スクロール位置 < 0) { スクロール位置 = 0; }
 
         //クリックしてないなら以降の処理はなし//
-        if (MonoWrap.Input.mouseLeft.on == false)
+        if (MONO_WRAP.Input.mouseLeft.on == false)
         {
             return false;
         }
@@ -344,7 +344,7 @@ public class UI_Window
             ポップアップリザルト = 0;
             if( isポップアップウィンドウ == true)
             {
-                MonoWrap.Input.mouseLeft.on = false;//マウスクリックを無効化
+                MONO_WRAP.Input.mouseLeft.on = false;//マウスクリックを無効化
                 ポップアップウィンドウ.Remove(this);
             }
             return true;
@@ -432,7 +432,7 @@ public class UI_Window
     public bool ObjectInput()
     {
         //配列の前からチェック
-        if (MonoWrap.Input.mouse.y / Config.解像度X倍 - 座標.y - タイトル枠高さ <= 固定縦)
+        if (MONO_WRAP.Input.mouse.y / Config.解像度X倍 - 座標.y - タイトル枠高さ <= 固定縦)
         {
             foreach(var it in fix_item)
             {
@@ -459,7 +459,7 @@ public class UI_Window
             return true;
         }
 
-        return new Rect(座標.x, 座標.y, 横幅, タイトル枠高さ + 縦幅).Hit( MonoWrap.Input.mouse) && MonoWrap.Input.mouseLeft.on;
+        return new Rect(座標.x, 座標.y, 横幅, タイトル枠高さ + 縦幅).Hit( MONO_WRAP.Input.mouse) && MONO_WRAP.Input.mouseLeft.on;
     }
 
     public void Reset描画範囲(bool is固定)
@@ -496,7 +496,7 @@ public class UI_Window
         is表示 = false;
         //MSound::効果音[SE::ウィンドウ閉じ].Play();todo 閉じる効果音
         ポップアップリザルト = リザルト;
-        MonoWrap.Input.mouseLeft.on = false;//マウスクリックを無効化
+        MONO_WRAP.Input.mouseLeft.on = false;//マウスクリックを無効化
         ポップアップウィンドウ.Remove(this);        
     }
 
