@@ -9,7 +9,7 @@ using MONO_WRAP;
 
 namespace CARD_IDLE;
 
-//各種テキスト
+//各種テキスト//日英
 public class TX
 {
     public static string Config_決定 = "決定";

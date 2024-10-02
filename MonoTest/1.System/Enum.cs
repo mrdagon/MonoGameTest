@@ -32,11 +32,6 @@ public enum MusicType
 
 }
 
-public enum PassiveType
-{
-
-}
-
 public enum WindowType
 {
 
@@ -47,13 +42,15 @@ public enum ItemType
 
 }
 
-public enum OrbType
-{
-
-}
-
-public enum SceneType
+public enum PageType
 {
     タイトル,
-    メインゲーム
+    メインメニュー,
+    実績,
+    コンフィグ,
+    クレジット,
+    デッキ構築,
+    対戦ロビー,
+    パック開封,
+    ルールブック,
 }

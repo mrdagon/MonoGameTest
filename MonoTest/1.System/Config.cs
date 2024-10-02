@@ -12,13 +12,15 @@ namespace CARD_IDLE;
 //各種設定値
 public class Config
 {
-    public static bool isウィンドウ;
-    public static int BGM音量;
-    public static int SE音量;
-    public static int 解像度設定 = 9;
-    public static int 解像度W = 1000;
-    public static int 解像度H = 1000;
-    public static int 解像度X倍 = 1;
+    public static bool isウィンドウ;//固定
+
+    public static int BGM音量;//0-10
+    public static int SE音量;//0-10
+
+    public static int 解像度W = 512;//固定
+    public static int 解像度H = 288;//固定
+    public static int 解像度X倍 = 2;//1-4倍
+    public static int 解像度上限 = 4;//1-4倍
 
     public static int 言語設定 = 0;//0 日本語,1英語 ,2その他
 

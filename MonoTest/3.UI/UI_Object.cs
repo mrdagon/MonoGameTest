@@ -12,7 +12,7 @@ namespace CARD_IDLE;
 //UIオブジェクトのベースクラス
 public class UI_Object
 {
-    public string ヘルプテキスト = "";
+    public string テキスト = "";
 
     public static UI_Object now_help = null;
 
@@ -166,7 +166,8 @@ public class UI_Object
     }
 
     //クリック、ドロップ、マウスオーバー判定を処理 //クリック or ドロップでtrue
-    public bool CheckInput(int px, int py)
+    //px 座標差分、py 座標差分
+    public bool CheckInput(int px = 0, int py = 0)
     {
         mousePos = 0;
 
@@ -226,14 +227,5 @@ public class UI_Object
     public virtual void Over()
     {
         overEvent();
-    }
-
-    public virtual void DrawHelp()
-    {
-        //通常はセットしてあるテキストヘルプ
-        if (ヘルプテキスト != null)
-        {
-            UIHelp.Text(ヘルプテキスト);
-        }
     }
 }

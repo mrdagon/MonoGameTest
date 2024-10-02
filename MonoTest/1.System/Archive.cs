@@ -10,7 +10,7 @@ using MONO_WRAP;
 namespace CARD_IDLE;
 
 //各種実績の達成状況
-public class Archive
+public enum ArchiveID
 {
     
 }

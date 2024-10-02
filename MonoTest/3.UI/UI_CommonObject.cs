@@ -17,20 +17,29 @@ public class UI_Button : UI_Object
     public Image 画像 = null;
     public Frame フレーム = null;
 
-    public int テキスト位置 = 5;//1~9 テンキーの位置関係と対応
-    public int 画像位置 = 5;//1~9 テンキーの位置関係と対応
+    public int テキスト位置x = 0;
+    public int テキスト位置y = 0;
+
+    public int 画像位置x = 0;
+    public int 画像位置y = 0;
 
     //Draw派生
     public override void Draw派生()
     {
         //フレームの描画
-        フレーム.Draw(形状.x, 形状.y, 形状.w, 形状.h);
-
-        //テキストの描画
-        AFont.PM12.DrawRotate(形状.x + 形状.w /2, 形状.y + 形状.h / 2, 1, 0, Microsoft.Xna.Framework.Color.Black, テキスト);
+        if (フレーム != null)
+        {
+            フレーム.Draw(形状.x, 形状.y, 形状.w, 形状.h);
+        }
 
         //画像アイコンの描画
+        if(画像 != null)
+        {
+            画像.DrawRotate(形状.x + 形状.w / 2 + 画像位置x , 形状.y + 形状.h / 2 + 画像位置y, 1, 0);
+        }
 
+        //テキストの描画
+        AFont.PM12.DrawRotate(形状.x + 形状.w / 2 + テキスト位置x, 形状.y + 形状.h / 2 + テキスト位置y , 1, 0, Microsoft.Xna.Framework.Color.Black, テキスト);
     }
 }
 
@@ -53,9 +62,6 @@ public class UI_Tab
     public Frame フレーム = null;
 
     public bool is縁描画 = true;
-
-    int テキスト位置 = 5;//1~9 テンキーの位置関係と対応
-    int 画像位置 = 5;//1~9 テンキーの位置関係と対応
 
     //SetUI関数
 

@@ -14,7 +14,7 @@ namespace CARD_IDLE;
 public class UI_Page
 {
 
-    public List<UI_Object> item = new List<UI_Object>();//スクロールする子オブジェクト
+    public List<UI_Object> item = new List<UI_Object>();
 
     //初期化処理
     public virtual void Init() { }
